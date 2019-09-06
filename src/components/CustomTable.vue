@@ -19,6 +19,15 @@
         <td v-for="(item, index) in tableData2" :key="index">{{item.value}}</td>
       </tr>
     </table>
+    <p>表格3</p>
+    <table class="mailTable">
+      <tr class="column">
+        <td v-for="(item, index) in tableTitle" :key="index">{{item}}</td>
+      </tr>
+      <tr>
+        <td v-for="(item, index) in tableData3" :key="index">{{item}}</td>
+      </tr>
+    </table>
   </div>
 </template>
 
@@ -31,6 +40,20 @@ export default {
   },
   data () {
     return {
+      tableTitle: [
+        '姓名',
+        '年龄',
+        '职业',
+        '喜好',
+        '体重'
+      ],
+      tableData3: [
+        'Json',
+        '26岁',
+        '律师',
+        '羽毛球',
+        '60KG'
+      ]
     }
   },
   computed: {
@@ -57,6 +80,10 @@ export default {
     line-height: 35px;
     box-sizing: border-box;
     padding: 0 10px;
+    border-right: 1px solid #E6EAEE;
+    &:last-child {
+      border-right: none;
+    }
   }
   .column {
     background: #f8f8f9;
