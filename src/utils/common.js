@@ -5,10 +5,6 @@
  * @param {Boolean} 是否转为JSON格式(默认为true)
  */
 function getSessionStorage(key) {
-  // defaultValue = window.sessionStorage.getItem(key)
-  // if (value) {
-  //   return parseJSON ? JSON.parse(value) : value
-  // }
   return window.sessionStorage.getItem(key)
 }
 
@@ -19,10 +15,20 @@ function getSessionStorage(key) {
  * @param {Boolean} 是否转为JSON格式(默认为true)
  */
 function setSessionStorage(key, value) {
-  window.sessionStorage.setItem(key, value)
+  window.sessionStorage.setItem(key, JSON.stringify(value))
+}
+
+function transfromStorage(obj, key) {
+  let jsonData = JSON.parse(window.sessionStorage.getItem(obj))
+  if (!jsonData) {
+    return ''
+  } else {
+    return jsonData[key]
+  }
 }
 
 export {
   getSessionStorage,
-  setSessionStorage
+  setSessionStorage,
+  transfromStorage
 }

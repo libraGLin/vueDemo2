@@ -58,9 +58,13 @@ export default {
     this.$store.dispatch('addNumTest', {
       NUM_TEST: '721'
     })
-    // 全局状态读值
-    let globalValue = this.$store.state.NUM_TEST
-    console.log('全局状态读值', globalValue)
+    this.$store.dispatch('addNumTest', {
+      test2: 'wo are family',
+      test3: '11'
+    })
+    this.$store.dispatch('addNum', {
+      num: '3444'
+    })
   }
 }
 </script>
