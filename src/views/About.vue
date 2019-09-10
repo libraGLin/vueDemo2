@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import CustomTable from '../components/CustomTable'
+import CustomTable from '@/components/CustomTable'
 export default {
   name: 'about',
   data () {
@@ -58,13 +58,19 @@ export default {
     this.$store.dispatch('addNumTest', {
       NUM_TEST: '721'
     })
-    this.$store.dispatch('addNumTest', {
+    this.$store.dispatch({
+      type: 'addNumTest',
       test2: 'wo are family',
       test3: '11'
     })
-    this.$store.dispatch('addNum', {
-      num: '3444'
-    })
+    this.$store.dispatch('addNum', '3444')
+    // this.$store.dispatch({
+    //   type: 'savaNameServe',
+    //   serveName: '172.0.0.11'
+    // })
+    // this.$store.dispatch('savaNameServe', {
+    //   serveName: '172.0.0.11'
+    // })
   }
 }
 </script>

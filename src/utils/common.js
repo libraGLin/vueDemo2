@@ -14,8 +14,9 @@ function getSessionStorage(key) {
  * @param {*} 要保存的值
  * @param {Boolean} 是否转为JSON格式(默认为true)
  */
-function setSessionStorage(key, value) {
-  window.sessionStorage.setItem(key, JSON.stringify(value))
+function setSessionStorage(key, value, flag = true) {
+  let tempValue = flag ? JSON.stringify(value) : value
+  window.sessionStorage.setItem(key, tempValue)
 }
 
 function transfromStorage(obj, key) {

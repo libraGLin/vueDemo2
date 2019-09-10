@@ -1,8 +1,8 @@
 // 自定义table组件
 <template>
-  <div>
-    <p>表格1</p>
-    <table class="mailTable">
+  <div class="cust-table">
+    <h2>表格1</h2>
+    <table class="mail-table">
       <tr v-for="index in rowCount" :key="index.id">
         <td class="column">{{tableData[index*2-2].key}}</td>
         <td>{{tableData[index*2-2].value}}</td>
@@ -10,8 +10,8 @@
         <td v-if="tableData[index*2-1]">{{tableData[index*2-1] ? tableData[index*2-1].value : ''}}</td>
       </tr>
     </table>
-    <p>表格2</p>
-    <table class="mailTable">
+    <h2>表格2</h2>
+    <table class="mail-table">
       <tr v-for="index in rowCount2" :key="index.id">
         <td class="column">{{data2[index*2-2].title}}</td>
         <td>{{data2[index*2-2].value}}</td>
@@ -31,8 +31,8 @@
         <td colspan="3">{{item.value}}</td>
       </tr>
     </table>
-    <p>表格3</p>
-    <table class="mailTable">
+    <h2>表格3</h2>
+    <table class="mail-table">
       <tr>
         <td class="column" v-for="(item, index) in tableData3" :key="index">{{item.key}}</td>
       </tr>
@@ -40,8 +40,8 @@
         <td v-for="(item, index) in tableData3" :key="index">{{item.value}}</td>
       </tr>
     </table>
-    <p>表格4</p>
-    <table class="mailTable">
+    <h2>表格4</h2>
+    <table class="mail-table">
       <tr>
         <td class="column" v-for="(item, index) in tableTitle2" :key="index">{{item}}</td>
       </tr>
@@ -107,26 +107,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mailTable {
-  width: 600px;
-  font-size: 12px;
-  border-collapse: collapse;
-  tr {
-    border:1px solid #E6EAEE;
-    td {
-      width: 150px;
-      height: 35px;
-      line-height: 35px;
-      box-sizing: border-box;
-      padding: 0 10px;
-      border-right: 1px solid #E6EAEE;
-      &:last-child {
-        // border-right: none;
-      }
-      &.column {
-        background: #f8f8f9;
-        color: #515a6e;
-        font-weight: bold;
+.cust-table {
+  h2{
+    margin: 15px auto;
+  }
+  .mail-table {
+    width: 600px;
+    font-size: 12px;
+    border-collapse: collapse;
+    tr {
+      border:1px solid #E6EAEE;
+      td {
+        width: 150px;
+        height: 35px;
+        line-height: 35px;
+        box-sizing: border-box;
+        padding: 0 10px;
+        border-right: 1px solid #E6EAEE;
+        &:last-child {
+          // border-right: none;
+        }
+        &.column {
+          background: #f8f8f9;
+          color: #515a6e;
+          font-weight: bold;
+        }
       }
     }
   }

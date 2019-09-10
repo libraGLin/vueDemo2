@@ -29,9 +29,8 @@ const store = new Vuex.Store({
       setSessionStorage('testObj', state.testObj)
     },
     [ADD_NUM](state, payload) {
-      state = payload
-      // state.num = payload.num
-      setSessionStorage('num', state.num)
+      state.num = payload
+      setSessionStorage('num', state.num, false)
     }
   },
   getters: { // 相当于计算属性
